@@ -1,0 +1,518 @@
+{% load static %}
+<!doctype html>
+<html lang="zxx" class="theme-light">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <!-- Links of CSS files -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/animate.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/fontawesome.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/flaticon.css'%}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/nice-select.css'%}">
+        <link rel="stylesheet" href="{% static 'css/slick.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/meanmenu.css'%}">
+        <link rel="stylesheet" href="{% static 'css/odometer.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+        <link rel="stylesheet" href="{% static 'css/dark-style.css'%}">
+
+        <title>Luvion - Online Banking & Payment Processing HTML Template</title>
+
+        <link rel="icon" type="image/png" href="{% static 'img/favicon.png'%}">
+    </head>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="shadow"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- Start Navbar Area -->
+    <div class="navbar-area">
+        <div class="luvion-responsive-nav">
+            <div class="container">
+                <div class="luvion-responsive-menu">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="{% static 'img/logo.png'%}" alt="logo">
+                            <img src="{% static 'img/black-logo.png'%}" alt="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="luvion-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="{% static 'img/logo.png'%}" alt="logo">
+                        <img src="{% static 'img/black-logo.png'%}" alt="logo">
+                    </a>
+                    <div class="others-options">
+                        {% if user.is_authenticated %}
+                            <a href="#" class="login-btn">Welcome {{user.username}}</a>
+                        {% endif %}
+                    </div>
+                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="adminHome" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Manage<i
+                                        class="fas fa-chevron-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a href="allUsers" class="nav-link">Users</a></li>
+                                    <li class="nav-item"><a href="allAccounts" class="nav-link active">Accounts</a></li>
+                                    <li class="nav-item"><a href="allBenificiaries" class="nav-link">Benificiaries</a></li>
+                                    <li class="nav-item"><a href="allTransections" class="nav-link">Transections</a></li> 
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a href="profile" class="nav-link">Profile</a></li>
+                            <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+                            <li class="nav-item"><a href="about" class="nav-link">About Us</a></li>
+                        </ul>
+                        <div class="others-options">
+                            <a href="logout" class="login-btn"><i class="fas fa-sign-in-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- End Navbar Area -->
+
+    <!-- Start Main Banner Area -->
+    <div class="main-banner jarallax" data-jarallax='{"speed": 0.3}' style="background-image: url({% static '/img/main-banner4.jpg'%});">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="main-banner-content">
+                        <h1>Manage User Accounts</h1>
+                        <p>Get the financial tools and insights to start, build, and grow your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Banner Area -->
+
+    <!-- Start Featured Boxes Area -->
+    <section class="featured-boxes-area">
+        <div class="container">
+            <div class="featured-boxes-inner">
+                <div class="row m-0">
+                    <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                        <div class="single-featured-box">
+                            <div class="icon color-fb7756">
+                                <!-- <i class="flaticon-piggy-bank"></i> -->
+                                <img
+                                    src="https://img.icons8.com/external-fauzidea-gradient-fauzidea/75/000000/external-piggy-bank-e-commerce-fauzidea-gradient-fauzidea.png" />
+                            </div>
+
+                            <h3>Transparent Pricing</h3>
+                            <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+
+                            {% comment %} <a href="features-1.html" class="read-more-btn">Read More</a> {% endcomment %}
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                        <div class="single-featured-box">
+                            <div class="icon color-facd60">
+                                <!-- <i class="flaticon-data-encryption"></i> -->
+                                <!-- <i class="fa-thin fa-file-lock"></i> -->
+                                <!-- <img src="https://img.icons8.com/color/70/000000/lets-encrypt.png"/> -->
+                                <img
+                                    src="https://img.icons8.com/external-xnimrodx-lineal-gradient-xnimrodx/75/000000/external-lock-encryption-xnimrodx-lineal-gradient-xnimrodx-3.png" />
+                            </div>
+
+                            <h3>Fully Encrypted</h3>
+                            <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+
+                            {% comment %} <a href="features-1.html" class="read-more-btn">Read More</a> {% endcomment %}
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                        <div class="single-featured-box">
+                            <div class="icon color-1ac0c6">
+                                <!-- <i class="flaticon-wallet"></i> -->
+                                <img src="https://img.icons8.com/nolan/80/withdrawal-limit.png" />
+                            </div>
+
+                            <h3>Instant Cashout</h3>
+                            <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+
+                            {% comment %} <a href="features-1.html" class="read-more-btn">Read More</a> {% endcomment %}
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                        <div class="single-featured-box">
+                            <div class="icon">
+                                <!-- <i class="flaticon-shield"></i> -->
+                                <img
+                                    src="https://img.icons8.com/external-xnimrodx-lineal-gradient-xnimrodx/64/000000/external-secure-financial-xnimrodx-lineal-gradient-xnimrodx.png" />
+                            </div>
+
+                            <h3>Safe and Secure</h3>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+
+                            {% comment %} <a href="features-1.html" class="read-more-btn">Read More</a> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Featured Boxes Area -->
+
+    <!-- Start Comparisons Area -->
+    <section class="comparisons-area ptb-70 bg-f7fafd">
+        <div class="container">
+            <div class="section-title">
+                <h2>User Accounts</h2>
+                <div class="bar"></div>
+            </div>
+
+                {% for message in messages %}
+                    <div class="alert alert-dismissible fade show {{ message.tags }} d-flex align-items-center mt-5" role="alert">
+                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                        <div>
+                            {{message}}
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+
+            <div class="comparisons-table table-responsive">
+                {% if not bankAccounts %}
+                    <div>
+                        <center class="p-3"><h3><strong> Didn't find any bank accounts</strong><h3></center>
+                    </div>
+                {% endif %}
+                {% if bankAccounts %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">UID</th>
+                            <th scope="col">Account Number</th>
+                            <th scope="col">IFSC Code</th>
+                            <th scope="col">Account Type</th>
+                            <th scope="col">Balance</th>
+                            <th scope="col">Date Created</th>
+                            <th scope="col">Show Transaction</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for bankAccount in bankAccounts %}
+                            {% if bankAccount %}
+                                <tr>
+                                    <td>{{bankAccount.user_id}}</td>
+
+                                    <td>{{bankAccount.account_no}}</td>
+                                    <td>{{bankAccount.IFSC_Code}}</td>
+                                    <td>{{bankAccount.account_type}}</td>
+                                    <td>{{bankAccount.balance}}</td>
+                                    <td>{{bankAccount.created_on}}</td>
+                                    <td><form action="accountTransections" method="POST">{% csrf_token %}<button value="{{bankAccount.account_no}}" name="acc_no" class="btn btn-primary" type="submit">Show</button></form></td>
+                                    <td><a href={% url 'deleteBankAccountByAdmin' id=bankAccount.id %} class="btn btn-primary">Delete</a></td>
+                                </tr>
+                            {% endif %} 
+                        {%endfor%}
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <!-- End Comparisons Area -->
+
+    <!-- Start Ready To Talk Area -->
+    <section class="ready-to-talk">
+        <div class="container">
+            <div class="ready-to-talk-content">
+                <h3>Ready to talk?</h3>
+                <p>Our team is here to answer your question about Luvion</p>
+                <a href="contact" class="btn btn-primary">Contact Us</a>
+                <span><a href="#">Or, get started now with a free trial</a></span>
+            </div>
+        </div>
+    </section>
+    <!-- End Ready To Talk Area -->
+
+    <!-- Start Partner Area -->
+    <div class="partner-area">
+        <div class="container">
+
+            <h3>More that 1.5 million businesses and organizations use Luvion</h3>
+
+            <div class="partner-inner">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-1.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover1.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-2.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover2.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-3.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover3.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-4.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover4.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-5.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover5.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-6.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover6.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-7.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover7.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-8.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover8.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-9.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover9.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-10.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover10.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-11.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover11.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-12.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover12.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-13.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover13.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-14.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover14.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-15.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover15.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-16.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover16.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-17.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover17.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-18.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover18.png'%}" alt="partner">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Partner Area -->
+
+
+
+    <!-- Start Account Create Area -->
+    <section class="account-create-area">
+        <div class="container">
+            <div class="account-create-content">
+                <h2>Apply for an account in minutes</h2>
+                <p>Get your Luvion account today!</p>
+                <a href="createAccount" class="btn btn-primary">Get Your Luvion Account</a>
+            </div>
+        </div>
+    </section>
+    <!-- End Account Create Area -->
+
+    <!-- Start Footer Area -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-md-6">
+                    <div class="single-footer-widget">
+                        <div class="logo">
+                            <a href="index.html" class="black-logo"><img src="{% static 'img/black-logo.png'%}" alt="logo"></a>
+                            <a href="index.html" class="white-logo"><img src="{% static 'img/logo.png'%}" alt="logo"></a>
+                            <p>Quis ipsum suspendisse ultrices gravida commodo. Risus commodo veliliee vel viverra
+                                maecenas accumsan lacus vel facilisis.</p>
+                        </div>
+
+                        <ul class="social-links">
+                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-md-6">
+                    <div class="single-footer-widget">
+                        <h3>Company</h3>
+
+                        <ul class="list">
+                            <li><a href="about">About Us</a></li>
+                            <li><a href="features-2.html">Services</a></li>
+                            <li><a href="features-1.html">Features</a></li>
+                            <li><a href="pricing.html">Our Pricing</a></li>
+                            <li><a href="blog-1.html">Latest News</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-md-6">
+                    <div class="single-footer-widget">
+                        <h3>Support</h3>
+
+                        <ul class="list">
+                            <li><a href="faq.html">FAQ's</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Condition</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-md-6">
+                    <div class="single-footer-widget">
+                        <h3>Address</h3>
+
+                        <ul class="footer-contact-info">
+                            <li><span>Location:</span> 27 Division St, New York, NY 10002, USA</li>
+                            <li><span>Email:</span> <a
+                                    href="/cdn-cgi/l/email-protection#abc3cec7c7c4ebc7deddc2c4c585c8c4c6"><span
+                                        class="__cf_email__"
+                                        data-cfemail="bdd5d8d1d1d2fdd1c8cbd4d2d393ded2d0">[email&#160;protected]</span></a>
+                            </li>
+                            <li><span>Phone:</span> <a href="tel:+321984754">+ (321) 984 754</a></li>
+                            <li><span>Fax:</span> <a href="tel:+12129876543">+1-212-9876543</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright-area">
+                <p>Copyright @
+                    <script data-cfasync="false"
+                        src="{% static '/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js'%}"></script>
+                    <script>document.write(new Date().getFullYear())</script> Luvion is proudly created by <a
+                        href="https://envytheme.com/" target="_blank"> EnvyTheme</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="map-image"><img src="{% static 'img/map.png'%}" alt="map"></div>
+    </footer>
+    <!-- End Footer Area -->
+
+    <div class="go-top"><i class="fas fa-arrow-up"></i></div>
+
+    <!-- Dark/Light Toggle -->
+    <div class="dark-version">
+        <label id="switch" class="switch">
+            <input type="checkbox" onchange="toggleTheme()" id="slider">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <!-- Links of JS files -->
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'js/meanmenu.js'%}"></script>
+    <script src="{% static 'js/nice-select.min.js'%}"></script>
+    <script src="{% static 'js/slick.min.js'%}"></script>
+    <script src="{% static 'js/magnific-popup.min.js'%}"></script>
+    <script src="{% static 'js/appear.min.js'%}"></script>
+    <script src="{% static 'js/odometer.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/parallax.min.js'%}"></script>
+    <script src="{% static 'js/wow.min.js'%}"></script>
+    <script src="{% static 'js/form-validator.min.js'%}"></script>
+    <script src="{% static 'js/contact-form-script.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+    </body>
+
+</html>

@@ -1,0 +1,146 @@
+{% load static %}
+<!doctype html>
+<html lang="zxx" class="theme-light">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Links of CSS files -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/animate.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/fontawesome.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/flaticon.css'%}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/nice-select.css'%}">
+        <link rel="stylesheet" href="{% static 'css/slick.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/meanmenu.css'%}">
+        <link rel="stylesheet" href="{% static 'css/odometer.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+        <link rel="stylesheet" href="{% static 'css/dark-style.css'%}">
+
+        <style>
+            body{
+                overflow: hidden;
+            }
+            .signup-content .signup-form form { 
+                margin-top: 10px;
+            }  
+        </style>
+        <title>Luvion - Online Banking & Payment Processing HTML Template</title>
+
+        <link rel="icon" type="image/png" href="{% static 'img/favicon.png'%}">
+    </head>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="shadow"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- Start Signup Area -->
+    <section class="signup-area">
+        <div class="row m-0">
+            <div class="col-lg-6 col-md-12 p-0">
+                <div class="signup-image">
+                    <img src="{% static 'img/signup-bg.jpg'%}" alt="image">
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 p-0">
+                <div class="signup-content">
+                    <div class="d-table">
+                        <div class="d-table-cell">
+                            <div class="signup-form">
+                                <div class="logo black-logo">
+                                    <a href="index.html"><img src="{% static 'img/black-logo.png'%}" alt="image"></a>
+                                </div>
+                                <div class="logo white-logo">
+                                    <a href="index.html"><img src="{% static 'img/logo.png'%}" alt="image"></a>
+                                </div>
+
+                                <h3>Open up your Luvion Account now</h3>
+                                <p>Already signed up? <a href="login">Log in</a></p>
+
+                                {% for message in messages %}
+                                    <div class="alert alert-dismissible fade show {{ message.tags }} d-flex align-items-center mt-3" role="alert">
+                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                        <div>
+                                            {{message}}
+                                        </div>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                {% endfor %}
+
+                                <form method="post" action="signup">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <input type="text" name="fname" id="fname" placeholder="Your First Name"
+                                            class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="lname" id="lname" placeholder="Your Last Name"
+                                            class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="uname" id="uname" placeholder="Your User Name"
+                                            class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email" placeholder="Your email address"
+                                            class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="password" name="password1" id="password1"
+                                            placeholder="Enter a password" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password2" id="password2"
+                                            placeholder="Reenter a password" class="form-control">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Login Area -->
+
+    <!-- Dark/Light Toggle -->
+    <div class="dark-version">
+        <label id="switch" class="switch">
+            <input type="checkbox" onchange="toggleTheme()" id="slider">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <!-- Links of JS files -->
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'js/meanmenu.js'%}"></script>
+    <script src="{% static 'js/nice-select.min.js'%}"></script>
+    <script src="{% static 'js/slick.min.js'%}"></script>
+    <script src="{% static 'js/magnific-popup.min.js'%}"></script>
+    <script src="{% static 'js/appear.min.js'%}"></script>
+    <script src="{% static 'js/odometer.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/parallax.min.js'%}"></script>
+    <script src="{% static 'js/wow.min.js'%}"></script>
+    <script src="{% static 'js/form-validator.min.js'%}"></script>
+    <script src="{% static 'js/contact-form-script.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+    </body>
+
+</html>

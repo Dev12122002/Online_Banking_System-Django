@@ -1,0 +1,489 @@
+{% load static %}
+<!doctype html>
+<html lang="zxx" class="theme-light">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Links of CSS files -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/animate.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/fontawesome.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/flaticon.css'%}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/nice-select.css'%}">
+        <link rel="stylesheet" href="{% static 'css/slick.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/meanmenu.css'%}">
+		<link rel="stylesheet" href="{% static 'css/odometer.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+        <link rel="stylesheet" href="{% static 'css/dark-style.css'%}">
+        <link rel="stylesheet" href="{% static 'css/profile.css'%}">
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+        <title>Luvion - Online Banking & Payment Processing HTML Template</title>
+
+        <link rel="icon" type="image/png" href="{% static 'img/favicon.png'%}">
+    </head>
+
+        <!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="shadow"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+
+        <!-- Start Navbar Area -->
+        <div class="navbar-area">
+            <div class="luvion-responsive-nav">
+                <div class="container">
+                    <div class="luvion-responsive-menu">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="{% static 'img/logo.png'%}" alt="logo">
+                                <img src="{% static 'img/black-logo.png'%}" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="luvion-nav">
+                <div class="container">
+                    {% if user.is_superuser == 0 %}
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="{% static 'img/logo.png'%}" alt="logo">
+                        <img src="{% static 'img/black-logo.png'%}" alt="logo">
+                    </a>
+                    <div class="others-options">
+                        {% if user.is_authenticated %}
+                            <a href="#" class="login-btn">Welcome {{user.first_name}}</a>
+                        {% endif %}
+                    </div>
+                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="index" class="nav-link">Home</li>
+               
+                            <li class="nav-item"><a href="#" class="nav-link">E-Services <i
+                                        class="fas fa-chevron-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a href="createAccount" class="nav-link">Create BankAccounts</a></li>
+                                    <li class="nav-item"><a href="myAccount" class="nav-link">My BankAccounts</a></li>
+                                    <li class="nav-item"><a href="manageBenificiary" class="nav-link">Manage Benificiary</a></li>
+                                    <li class="nav-item"><a href="fundTransfer" class="nav-link">Fund Transfer</a></li>
+                                    <li class="nav-item"><a href="payToBenificiary" class="nav-link">Transfer To Benificiary</a></li>
+                                    <li class="nav-item"><a href="myTransections" class="nav-link">Transection History</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a href="profile" class="nav-link active">Profile</a></li>
+                            <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+                            <li class="nav-item"><a href="about" class="nav-link">About Us</a></li>
+                        </ul>
+                        <div class="others-options">
+                            <a href="logout" class="login-btn"><i class="fas fa-sign-in-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </nav>
+                {% endif %}
+
+                {% if user.is_superuser == 1 %}
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="{% static 'img/logo.png'%}" alt="logo">
+                        <img src="{% static 'img/black-logo.png'%}" alt="logo">
+                    </a>
+                    <div class="others-options">
+                        {% if user.is_authenticated %}
+                            <a href="#" class="login-btn">Welcome {{user.username}}</a>
+                        {% endif %}
+                    </div>
+                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="adminHome" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Manage<i
+                                        class="fas fa-chevron-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a href="allUsers" class="nav-link">Users</a></li>
+                                    <li class="nav-item"><a href="allAccounts" class="nav-link">Accounts</a></li>
+                                    <li class="nav-item"><a href="allBenificiaries" class="nav-link">Benificiaries</a></li>
+                                    <li class="nav-item"><a href="allTransections" class="nav-link">Transections</a></li> 
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a href="profile" class="nav-link active">Profile</a></li>
+                            <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+                            <li class="nav-item"><a href="about" class="nav-link">About Us</a></li>
+                        </ul>
+                        <div class="others-options">
+                            <a href="logout" class="login-btn"><i class="fas fa-sign-in-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </nav>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- End Navbar Area -->
+        
+        <!-- Start Page Title Area -->
+        <div class="page-title-area item-bg1 jarallax" data-jarallax='{"speed": 0.3}' style="background-image: url({% static '/img/contact.webp'%});">
+            <div class="container">
+                <div class="page-title-content">
+                    <h2>My Profile</h2>
+                    <p>The Luvion story</p>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Title Area -->
+
+        <form action="updateProfile" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="wrapper mt-sm-5 team-area ptb-70 bg-f7fafd mb-5">
+                {% for message in messages %}
+                                 
+                    <div class="alert alert-dismissible fade show {{ message.tags }} d-flex align-items-center mt-5" role="alert">
+                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                        <div>
+                            {{message}}
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+                <div class="container">
+                    <h4 class="pb-4 border-bottom">Profile settings</h4>
+                <div class="d-flex align-items-start py-3 border-bottom"> 
+                    <div class="p-4"><img src="{{user.profile.Image.url}}" class="img" alt=""></div>
+                    <div class="pl-sm-4 pl-2 ml-5 p-5" id="img-section"> <b>Profile Photo</b>
+                        <p>Accepted file type .png. Less than 1MB</p>
+                        <div><input type="file" name="pimage" value="{{user.profile.Image.url}}"></div>
+                        <button class="btn btn-primary mt-4"><b>Upload</b></button>
+                        <a href="removePic" class="btn btn-primary mt-4"><b>Remove Pick</b></a>
+                    </div>
+                </div>
+                <div class="py-2">
+                    <div class="row py-2">
+                        <div class="col-md-6"> <label for="UserName">UserName</label> <input name="username" type="text" class="bg-light form-control" placeholder="Enter your username" value="{{user.username}}" required> </div>
+                        <div class="col-md-6 pt-md-0 pt-3"> <label for="Email">Email</label> <input name="email" type="text" class="bg-light form-control" placeholder="Enter your Email" value="{{user.email}}" required> </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-md-6"> <label for="fname">First Name</label> <input name="fname" type="text" class="bg-light form-control" placeholder="Your First Name" value="{{user.first_name}}" required> </div>
+                        <div class="col-md-6 pt-md-0 pt-3"> <label for="phone">Last Name</label> <input name="lname" type="tel" class="bg-light form-control" placeholder="Your Last Name" value="{{user.last_name}}"required> </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-md-6 pt-md-0 pt-3"> <label for="phone">Phone Number</label> <input name="number" type="tel" class="bg-light form-control" placeholder="+1 213-548-6015" value="{{user.profile.mobile}}" required> </div>
+                        <div class="col-md-6"> <label for="date">Date Of Birth</label> <input name="dob" type="date" class="bg-light form-control" placeholder="Your Birthdate" id="myDate" value="{{user.profile.dob}}" required> </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-md-6 pt-md-0 pt-3"> <label for="address">Address</label> <textarea name="address" id="myTextarea" class="bg-light form-control" placeholder="Your address" value="{{user.profile.address}}" required></textarea> </div>
+                        <div class="col-md-6"> <label for="city">City</label> <input name="city" type="text" class="bg-light form-control" placeholder="Your City" value="{{user.profile.city}}" required> </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-md-6"> <label for="country">country</label> 
+                            <input name="country" type="text" class="bg-light form-control" placeholder="Country" name="country" id="country" class="bg-light" value="{{user.profile.country}}" required> 
+                        </div>
+                        <div class="col-md-9 pt-md-0 pt-3 mt-3" id="lang">
+                            <div class="col-md-9"> <label for="gender"><p>Gender : </p></label>
+                                {% if user.profile.gender == "Male" %}
+                                    <input type="radio" class="bg-light" name="gender" checked="checked" value="Male"> Male
+                                    <input type="radio" class="bg-light" name="gender" value="Female">Female
+                                    <input type="radio" class="bg-light" name="gender" value="Other">Other
+                                {% endif %}
+                                {% if user.profile.gender == "Female" %}
+                                    Male <input type="radio" class="bg-light" name="gender" value="Male">
+                                    Female <input type="radio" class="bg-light" name="gender" checked="checked" value="Female">
+                                    Other <input type="radio" class="bg-light" name="gender" value="Other">
+                                {% endif %}
+                                {% if user.profile.gender == "Other" %}
+                                    Male <input type="radio" class="bg-light" name="gender" value="Male">
+                                    Female <input type="radio" class="bg-light" name="gender" value="Female">
+                                    Other <input type="radio" class="bg-light" name="gender" checked="checked" value="Other">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-3 pb-4 border-bottom"> <button type="submit" class="btn btn-primary mr-3">Save Changes</button> <a href="cancelUpdateProfile" class="btn border button">Cancel</a> </div>
+                    <div class="d-sm-flex align-items-center pt-3" id="deactivate">
+                        <div> <b>Deactivate your account</b>
+                            <p>Details about your company account and password</p>
+                        </div>
+                        <div class="m-3 p-2"> <a href={% url 'deleteUserAccount'  %} class="btn danger">Deactivate</a> </div>
+                    </div>
+                </div>    
+            </div>
+            </div>
+
+        </form>
+
+        <script>
+              document.getElementById("myTextarea").defaultValue = "{{user.profile.address}}";
+              document.getElementById("myDate").defaultValue = "{{ user.profile.dob|date:'Y-m-d' }}";
+        </script>
+        
+        <!-- Start Ready To Talk Area -->
+		<section class="ready-to-talk">
+			<div class="container">
+				<div class="ready-to-talk-content">
+                    <h3>Ready to talk?</h3>
+                    <p>Our team is here to answer your question about Luvion</p>
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                    <span><a href="#">Or, get started now with a free trial</a></span>
+                </div>
+			</div>
+		</section>
+        <!-- End Ready To Talk Area -->
+        
+        <!-- Start Partner Area -->
+		<div class="partner-area">
+			<div class="container">
+
+                <h3>More that 1.5 million businesses and organizations use Luvion</h3>
+
+				<div class="partner-inner">
+					<div class="row align-items-center">
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-1.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover1.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-2.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover2.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-3.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover3.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-4.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover4.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-5.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover5.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-6.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover6.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-7.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover7.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-8.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover8.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-9.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover9.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-10.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover10.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-11.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover11.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-12.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover12.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-13.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover13.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-14.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover14.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-15.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover15.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-16.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover16.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-17.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover17.png'%}" alt="partner">
+							</a>
+						</div>
+
+						<div class="col-lg-2 col-sm-4 col-md-3 col-6">
+							<a href="#">
+								<img src="{% static 'img/partner-image/partner-18.png'%}" alt="partner">
+								<img src="{% static 'img/partner-image/partner-hover18.png'%}" alt="partner">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- End Partner Area -->
+
+        <!-- Start Account Create Area -->
+        <section class="account-create-area">
+            <div class="container">
+                <div class="account-create-content">
+                    <h2>Apply for an account in minutes</h2>
+                    <p>Get your Luvion account today!</p>
+                    <a href="login.html" class="btn btn-primary">Get Your Luvion Account</a>
+                </div>
+            </div>
+        </section>
+        <!-- End Account Create Area -->
+        
+        <!-- Start Footer Area -->
+		<footer class="footer-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-sm-6 col-md-6">
+						<div class="single-footer-widget">
+							<div class="logo">
+								<a href="index.html" class="black-logo"><img src="{% static 'img/black-logo.png'%}" alt="logo"></a>
+								<a href="index.html" class="white-logo"><img src="{% static 'img/logo.png'%}" alt="logo"></a>
+                                <p>Quis ipsum suspendisse ultrices gravida commodo. Risus commodo veliliee vel viverra maecenas accumsan lacus vel facilisis.</p>
+							</div>
+                            
+							<ul class="social-links">
+								<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+								<li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-sm-6 col-md-6">
+						<div class="single-footer-widget">
+                            <h3>Company</h3>
+                            
+							<ul class="list">
+								<li><a href="about.html">About Us</a></li>
+								<li><a href="features-2.html">Services</a></li>
+								<li><a href="features-1.html">Features</a></li>
+								<li><a href="pricing.html">Our Pricing</a></li>
+								<li><a href="blog-1.html">Latest News</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-sm-6 col-md-6">
+						<div class="single-footer-widget">
+                            <h3>Support</h3>
+                            
+							<ul class="list">
+								<li><a href="faq.html">FAQ's</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Terms & Condition</a></li>
+								<li><a href="#">Community</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-sm-6 col-md-6">
+						<div class="single-footer-widget">
+							<h3>Address</h3>
+							
+							<ul class="footer-contact-info">
+								<li><span>Location:</span> 27 Division St, New York, NY 10002, USA</li>
+								<li><span>Email:</span> <a href="/cdn-cgi/l/email-protection#a4ccc1c8c8cbe4c8d1d2cdcbca8ac7cbc9"><span class="__cf_email__" data-cfemail="d4bcb1b8b8bb94b8a1a2bdbbbafab7bbb9">[email&#160;protected]</span></a></li>
+								<li><span>Phone:</span> <a href="tel:+321984754">+ (321) 984 754</a></li>
+								<li><span>Fax:</span> <a href="tel:+12129876543">+1-212-9876543</a></li>
+                            </ul>
+						</div>
+					</div>
+				</div>
+
+                <div class="copyright-area">
+                    <p>Copyright @<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script> Luvion is proudly created by <a href="https://envytheme.com/" target="_blank"> EnvyTheme</a></p>
+                </div>
+            </div>
+            
+            <div class="map-image"><img src="{% static 'img/map.png'%}" alt="map"></div>
+		</footer>
+        <!-- End Footer Area -->
+        
+        <div class="go-top"><i class="fas fa-arrow-up"></i></div>
+
+        <!-- Dark/Light Toggle -->
+		<div class="dark-version">
+            <label id="switch" class="switch">
+                <input type="checkbox" onchange="toggleTheme()" id="slider">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <!-- Links of JS files -->
+        <script src="{% static 'js/jquery.min.js'%}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+        <script src="{% static 'js/meanmenu.js'%}"></script>
+        <script src="{% static 'js/nice-select.min.js'%}"></script>
+        <script src="{% static 'js/slick.min.js'%}"></script>
+        <script src="{% static 'js/magnific-popup.min.js'%}"></script>
+		<script src="{% static 'js/appear.min.js'%}"></script>
+        <script src="{% static 'js/odometer.min.js'%}"></script>
+        <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+        <script src="{% static 'js/parallax.min.js'%}"></script>
+        <script src="{% static 'js/wow.min.js'%}"></script>
+        <script src="{% static 'js/form-validator.min.js'%}"></script>
+        <script src="{% static 'js/contact-form-script.js'%}"></script>
+        <script src="{% static 'js/main.js'%}"></script>
+    </body>
+</html>

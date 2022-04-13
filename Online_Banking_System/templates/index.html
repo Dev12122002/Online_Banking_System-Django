@@ -1,0 +1,1533 @@
+{% load static %}
+<!doctype html>
+<html lang="zxx" class="theme-light">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <!-- Links of CSS files -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/animate.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/fontawesome.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/flaticon.css'%}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/nice-select.css'%}">
+        <link rel="stylesheet" href="{% static 'css/slick.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/meanmenu.css'%}">
+        <link rel="stylesheet" href="{% static 'css/odometer.min.css'%}">
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+        <link rel="stylesheet" href="{% static 'css/dark-style.css'%}">
+
+{#        <style>#}
+{##}
+{#            .overview-box .overview-content .content .services-list li span i::before {#}
+{#                font-size: 17px;#}
+{#            }#}
+{##}
+{#            @font-face {#}
+{#              font-family: "Flaticon";#}
+{#              src: url("{% static '/fonts/Flaticon.eot'%}");#}
+{#              src: url("{% static '/fonts/Flaticon.eot?#iefix'%}") format("embedded-opentype"),#}
+{#                url("{% static '/fonts/Flaticon.woff2'%}") format("woff2"),#}
+{#                url("{% static '/fonts/Flaticon.woff'%}") format("woff"),#}
+{#                url("{% static '/fonts/Flaticon.ttf'%}") format("truetype"),#}
+{#                url("{% static '/fonts/Flaticon.svg#Flaticon'%}") format("svg");#}
+{#              font-weight: normal;#}
+{#              font-style: normal;#}
+{#            }#}
+{##}
+{#            @media screen and (-webkit-min-device-pixel-ratio: 0) {#}
+{#              @font-face {#}
+{#                font-family: "Flaticon";#}
+{#                src: url("{% static '/fonts/Flaticon.svg#Flaticon'%}") format("svg");#}
+{#              }#}
+{#            }#}
+{##}
+{#        </style>#}
+
+        <title>Luvion - Online Banking & Payment Processing HTML Template</title>
+
+        <link rel="icon" type="image/png" href="{% static 'img/favicon.png'%}">
+    </head>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="shadow"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- Start Navbar Area -->
+    <div class="navbar-area">
+        <div class="luvion-responsive-nav">
+            <div class="container">
+                <div class="luvion-responsive-menu">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="{% static 'img/logo.png'%}" alt="logo">
+                            <img src="{% static 'img/black-logo.png'%}" alt="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="luvion-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="{% static 'img/logo.png'%}" alt="logo">
+                        <img src="{% static 'img/black-logo.png'%}" alt="logo">
+                    </a>
+                    <div class="others-options">
+                        {% if user.is_authenticated %}
+                            <a href="#" class="login-btn">Welcome {{user.first_name}}</a>
+                        {% endif %}
+                    </div>
+                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="index" class="nav-link active">Home</li>
+               
+                            <li class="nav-item"><a href="#" class="nav-link">E-Services <i
+                                        class="fas fa-chevron-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a href="createAccount" class="nav-link">Create BankAccounts</a></li>
+                                    <li class="nav-item"><a href="myAccount" class="nav-link">My BankAccounts</a></li>
+                                    <li class="nav-item"><a href="manageBenificiary" class="nav-link">Manage Benificiary</a></li>
+                                    <li class="nav-item"><a href="fundTransfer" class="nav-link">Fund Transfer</a></li>
+                                    <li class="nav-item"><a href="payToBenificiary" class="nav-link">Transfer To Benificiary</a></li>
+                                    <li class="nav-item"><a href="myTransections" class="nav-link">Transection History</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a href="profile" class="nav-link">Profile</a></li>
+                            <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+                            <li class="nav-item"><a href="about" class="nav-link">About Us</a></li>
+                        </ul>
+                        <div class="others-options">
+                            <a href="logout" class="login-btn"><i class="fas fa-sign-in-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- End Navbar Area -->
+
+    <!-- Start Main Banner Area -->
+    <div class="main-banner jarallax" data-jarallax='{"speed": 0.3}'>
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="main-banner-content">
+                        <h1>Easy, fee-free banking for entrepreneurs</h1>
+                        <p>Get the financial tools and insights to start, build, and grow your business.</p>
+                        <a href="#how" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Banner Area -->
+
+    <!-- Start Featured Boxes Area -->
+    <section class="featured-boxes-area">
+        <div class="container">
+            <div class="featured-boxes-inner">
+                <div class="row m-0">
+                    <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                        <div class="single-featured-box">
+                            <div class="icon color-fb7756">
+                                <!-- <i class="flaticon-piggy-bank"></i> -->
+                                <img
+                                    src="https://img.icons8.com/external-fauzidea-gradient-fauzidea/75/000000/external-piggy-bank-e-commerce-fauzidea-gradient-fauzidea.png" />
+                            </div>
+
+                            <h3>Transparent Pricing</h3>
+                            <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+
+                            {% comment %} <a href="features-1.html" class="read-more-btn">Read More</a> {% endcomment %}
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                        <div class="single-featured-box">
+                            <div class="icon color-facd60">
+                                <!-- <i class="flaticon-data-encryption"></i> -->
+                                <!-- <i class="fa-thin fa-file-lock"></i> -->
+                                <!-- <img src="https://img.icons8.com/color/70/000000/lets-encrypt.png"/> -->
+                                <img
+                                    src="https://img.icons8.com/external-xnimrodx-lineal-gradient-xnimrodx/75/000000/external-lock-encryption-xnimrodx-lineal-gradient-xnimrodx-3.png" />
+                            </div>
+
+                            <h3>Fully Encrypted</h3>
+                            <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+
+                            {% comment %} <a href="features-1.html" class="read-more-btn">Read More</a> {% endcomment %}
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                        <div class="single-featured-box">
+                            <div class="icon color-1ac0c6">
+                                <!-- <i class="flaticon-wallet"></i> -->
+                                <img src="https://img.icons8.com/nolan/80/withdrawal-limit.png" />
+                            </div>
+
+                            <h3>Instant Cashout</h3>
+                            <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+
+                            {% comment %} <a href="features-1.html" class="read-more-btn">Read More</a> {% endcomment %}
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                        <div class="single-featured-box">
+                            <div class="icon">
+                                <!-- <i class="flaticon-shield"></i> -->
+                                <img
+                                    src="https://img.icons8.com/external-xnimrodx-lineal-gradient-xnimrodx/64/000000/external-secure-financial-xnimrodx-lineal-gradient-xnimrodx.png" />
+                            </div>
+
+                            <h3>Safe and Secure</h3>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+
+                            {% comment %} <a href="features-1.html" class="read-more-btn">Read More</a> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Featured Boxes Area -->
+
+    <!-- Start How It Works Area -->
+    <section class="how-it-works-area ptb-70" id="how">
+        <div class="container">
+            <div class="section-title">
+                <h2>How Luvion Works</h2>
+                <div class="bar"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="single-how-it-works">
+                        <img src="{% static 'img/how-it-works-image/1.png'%}" alt="image">
+
+                        <h3>1. Register for free</h3>
+                        <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                            adipiscing aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="single-how-it-works">
+                        <img src="{% static 'img/how-it-works-image/2.png'%}" alt="image">
+
+                        <h3>2. Choose an amount to send</h3>
+                        <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                            adipiscing aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="single-how-it-works">
+                        <img src="{% static 'img/how-it-works-image/3.png'%}" alt="image">
+
+                        <h3>3. Add recipient’s bank details</h3>
+                        <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                            adipiscing aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="single-how-it-works">
+                        <img src="{% static 'img/how-it-works-image/4.png'%}" alt="image">
+
+                        <h3>4. Verify your identity</h3>
+                        <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                            adipiscing aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="single-how-it-works">
+                        <img src="{% static 'img/how-it-works-image/5.png'%}" alt="image">
+
+                        <h3>5. Pay for your transfer</h3>
+                        <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                            adipiscing aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="single-how-it-works">
+                        <img src="{% static 'img/how-it-works-image/6.png'%}" alt="image">
+
+                        <h3>6. That’s it</h3>
+                        <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                            adipiscing aliqua.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End How It Works Area -->
+
+    <!-- Start Fund Transfer Area -->
+    <section class="account-create-area">
+        <div class="container">
+            <div class="account-create-content">
+                <h2>Fund Transfer In A Minute</h2>
+                <p>Transfer funds from your account today!</p>
+                <a href="fundTransfer" class="btn btn-primary">Fund Transfer</a>
+            </div>
+        </div>
+    </section>
+    <!-- End Fund Transfer Area -->
+
+    <!-- Start Services Area -->
+    <section class="services-area ptb-70">
+        <div class="container-fluid p-0">
+            <div class="overview-box">
+                <div class="overview-content">
+                    <div class="content left-content">
+                        <h2>Freelancers, entrepreneurs, and sole traders</h2>
+                        <div class="bar"></div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.</p>
+
+                        <ul class="services-list">
+                            <li><span><i class="fa-solid fa-check"></i> Free plan available</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> Full data privacy compliance</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> 100% transparent costs</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> Commitment-free</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> Real-time spending overview</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> Debit Mastercard included</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="overview-image">
+                    <div class="image">
+                        <img src="{% static 'img/1.png'%}" alt="image">
+
+                        <div class="circle-img">
+                            <img src="{% static 'img/circle.png'%}" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services Area -->
+
+    <!-- Start Services Area -->
+    <section class="services-area ptb-70 bg-f7fafd">
+        <div class="container-fluid p-0">
+            <div class="overview-box">
+                <div class="overview-image">
+                    <div class="image">
+                        <img src="{% static 'img/2.png'%}" alt="image">
+
+                        <div class="circle-img">
+                            <img src="{% static 'img/circle.png'%}" alt="image">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-content">
+                    <div class="content">
+                        <h2>Small- to medium-sized businesses</h2>
+                        <div class="bar"></div>
+                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit
+                            amet, consectetur adipiscing elit.</p>
+
+                        <ul class="services-list">
+                            <li><span><i class="fa-solid fa-check"></i> Easy transfers</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> Deposit checks instantly</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> A powerful open API</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> Coverage around the world</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> Business without borders</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> Affiliates and partnerships</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services Area -->
+
+    <!-- Start Services Area -->
+    <section class="services-area ptb-70">
+        <div class="container-fluid p-0">
+            <div class="overview-box">
+                <div class="overview-content">
+                    <div class="content left-content">
+                        <h2>Large or enterprise level businesses</h2>
+                        <div class="bar"></div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.</p>
+
+                        <ul class="services-list">
+                            <li><span><i class="fa-solid fa-check"></i> Corporate Cards</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> International Payments</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> Automated accounting</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> Request Features</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> Premium Support</span></li>
+                            <li><span><i class="fa-solid fa-check"></i> Direct Debit</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="overview-image">
+                    <div class="image">
+                        <img src="{% static 'img/3.png'%}" alt="image">
+
+                        <div class="circle-img">
+                            <img src="{% static 'img/circle.png'%}" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services Area -->
+
+
+
+    <!-- Start Services Area -->
+    <section class="services-area ptb-70 bg-f7fafd">
+        <div class="container-fluid p-0">
+            <div class="overview-box">
+                <div class="overview-image">
+                    <div class="image">
+                        <img src="{% static 'img/5.png'%}" alt="image" height="500vh">
+
+                        <div class="circle-img">
+                            <img src="{% static 'img/circle.png'%}" alt="image">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-content">
+                    <div class="content">
+                        <span class="sub-title">Top Security</span>
+                        <h2>Small- to medium-sized businesses</h2>
+                        <div class="bar"></div>
+                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit
+                            amet, consectetur adipiscing elit.</p>
+
+                        <ul class="features-list">
+                            <li><span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                                        viewBox="0 0 172 172" style=" fill:#000000;">
+                                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                            stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                            stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+                                            font-weight="none" font-size="none" text-anchor="none"
+                                            style="mix-blend-mode: normal">
+                                            <path d="M0,172v-172h172v172z" fill="none"></path>
+                                            <g fill="#2ecc71">
+                                                <path
+                                                    d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg> Easy transfers</span></li>
+                            <li><span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                                        viewBox="0 0 172 172" style=" fill:#000000;">
+                                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                            stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                            stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+                                            font-weight="none" font-size="none" text-anchor="none"
+                                            style="mix-blend-mode: normal">
+                                            <path d="M0,172v-172h172v172z" fill="none"></path>
+                                            <g fill="#2ecc71">
+                                                <path
+                                                    d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg> Deposit checks instantly</span></li>
+                            <li><span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                                        viewBox="0 0 172 172" style=" fill:#000000;">
+                                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                            stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                            stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+                                            font-weight="none" font-size="none" text-anchor="none"
+                                            style="mix-blend-mode: normal">
+                                            <path d="M0,172v-172h172v172z" fill="none"></path>
+                                            <g fill="#2ecc71">
+                                                <path
+                                                    d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg> A powerful open API</span></li>
+                            <li><span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                                        viewBox="0 0 172 172" style=" fill:#000000;">
+                                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                            stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                            stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+                                            font-weight="none" font-size="none" text-anchor="none"
+                                            style="mix-blend-mode: normal">
+                                            <path d="M0,172v-172h172v172z" fill="none"></path>
+                                            <g fill="#2ecc71">
+                                                <path
+                                                    d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg> Coverage around the world</span></li>
+                            <li><span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                                        viewBox="0 0 172 172" style=" fill:#000000;">
+                                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                            stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                            stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+                                            font-weight="none" font-size="none" text-anchor="none"
+                                            style="mix-blend-mode: normal">
+                                            <path d="M0,172v-172h172v172z" fill="none"></path>
+                                            <g fill="#2ecc71">
+                                                <path
+                                                    d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg> Business without borders</span></li>
+                            <li><span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                                        viewBox="0 0 172 172" style=" fill:#000000;">
+                                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                            stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                            stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+                                            font-weight="none" font-size="none" text-anchor="none"
+                                            style="mix-blend-mode: normal">
+                                            <path d="M0,172v-172h172v172z" fill="none"></path>
+                                            <g fill="#2ecc71">
+                                                <path
+                                                    d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg> Affiliates and partnerships</span></li>
+                        </ul>
+
+                        <a href="#how" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services Area -->
+
+    
+    <!-- Start Comparisons Area -->
+    <section class="comparisons-area ptb-70 bg-f7fafd">
+        <div class="container">
+            <div class="section-title">
+                <h2>Compare us with others</h2>
+                <div class="bar"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+            </div>
+
+            <div class="comparisons-table table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Packages</th>
+                            <th scope="col">Freelancer</th>
+                            <th scope="col">Householder</th>
+                            <th scope="col">Business Man</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Control payout timing</td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#f1c40f">
+                                            <path
+                                                d="M78.83333,117.63367l-33.7335,-33.7335l10.13367,-10.13367l23.59983,23.59983l69.3375,-69.3375c-2.5585,-3.92017 -6.97317,-6.52883 -12.00417,-6.52883h-100.33333c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v100.33333c0,7.91917 6.41417,14.33333 14.33333,14.33333h100.33333c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-90.19967z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#f1c40f">
+                                            <path
+                                                d="M78.83333,117.63367l-33.7335,-33.7335l10.13367,-10.13367l23.59983,23.59983l69.3375,-69.3375c-2.5585,-3.92017 -6.97317,-6.52883 -12.00417,-6.52883h-100.33333c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v100.33333c0,7.91917 6.41417,14.33333 14.33333,14.33333h100.33333c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-90.19967z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></i></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#f1c40f">
+                                            <path
+                                                d="M78.83333,117.63367l-33.7335,-33.7335l10.13367,-10.13367l23.59983,23.59983l69.3375,-69.3375c-2.5585,-3.92017 -6.97317,-6.52883 -12.00417,-6.52883h-100.33333c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v100.33333c0,7.91917 6.41417,14.33333 14.33333,14.33333h100.33333c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-90.19967z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></i></td>
+                        </tr>
+                        <tr>
+                            <td>Transparent payouts</td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#2ecc71">
+                                            <path
+                                                d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="22"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#2ecc71">
+                                            <path
+                                                d="M141.04,13.76h-110.08c-9.4944,0 -17.2,7.7056 -17.2,17.2v110.08c0,9.4944 7.7056,17.2 17.2,17.2h110.08c9.4944,0 17.2,-7.7056 17.2,-17.2v-110.08c0,-9.4944 -7.7056,-17.2 -17.2,-17.2zM119.4024,114.5176l-4.8848,4.8848l-28.5176,-28.5176l-28.5176,28.5176l-4.8848,-4.8848l28.5176,-28.5176l-28.5176,-28.5176l4.8848,-4.8848l28.5176,28.5176l28.5176,-28.5176l4.8848,4.8848l-28.5176,28.5176z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#2ecc71">
+                                            <path
+                                                d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                        </tr>
+                        <tr>
+                            <td>Automate evidence submission</td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="22"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#e67e22">
+                                            <path
+                                                d="M141.04,13.76h-110.08c-9.4944,0 -17.2,7.7056 -17.2,17.2v110.08c0,9.4944 7.7056,17.2 17.2,17.2h110.08c9.4944,0 17.2,-7.7056 17.2,-17.2v-110.08c0,-9.4944 -7.7056,-17.2 -17.2,-17.2zM119.4024,114.5176l-4.8848,4.8848l-28.5176,-28.5176l-28.5176,28.5176l-4.8848,-4.8848l28.5176,-28.5176l-28.5176,-28.5176l4.8848,-4.8848l28.5176,28.5176l28.5176,-28.5176l4.8848,4.8848l-28.5176,28.5176z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></i></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#e67e22">
+                                            <path
+                                                d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#e67e22">
+                                            <path
+                                                d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                        </tr>
+                        <tr>
+                            <td>Collaboration notes</td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#9b59b6">
+                                            <path
+                                                d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="22"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#9b59b6">
+                                            <path
+                                                d="M141.04,13.76h-110.08c-9.4944,0 -17.2,7.7056 -17.2,17.2v110.08c0,9.4944 7.7056,17.2 17.2,17.2h110.08c9.4944,0 17.2,-7.7056 17.2,-17.2v-110.08c0,-9.4944 -7.7056,-17.2 -17.2,-17.2zM119.4024,114.5176l-4.8848,4.8848l-28.5176,-28.5176l-28.5176,28.5176l-4.8848,-4.8848l28.5176,-28.5176l-28.5176,-28.5176l4.8848,-4.8848l28.5176,28.5176l28.5176,-28.5176l4.8848,4.8848l-28.5176,28.5176z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="22"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#9b59b6">
+                                            <path
+                                                d="M141.04,13.76h-110.08c-9.4944,0 -17.2,7.7056 -17.2,17.2v110.08c0,9.4944 7.7056,17.2 17.2,17.2h110.08c9.4944,0 17.2,-7.7056 17.2,-17.2v-110.08c0,-9.4944 -7.7056,-17.2 -17.2,-17.2zM119.4024,114.5176l-4.8848,4.8848l-28.5176,-28.5176l-28.5176,28.5176l-4.8848,-4.8848l28.5176,-28.5176l-28.5176,-28.5176l4.8848,-4.8848l28.5176,28.5176l28.5176,-28.5176l4.8848,4.8848l-28.5176,28.5176z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                        </tr>
+                        <tr>
+                            <td>Deposit tagging</td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#3498db">
+                                            <path
+                                                d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#3498db">
+                                            <path
+                                                d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="22"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#3498db">
+                                            <path
+                                                d="M141.04,13.76h-110.08c-9.4944,0 -17.2,7.7056 -17.2,17.2v110.08c0,9.4944 7.7056,17.2 17.2,17.2h110.08c9.4944,0 17.2,-7.7056 17.2,-17.2v-110.08c0,-9.4944 -7.7056,-17.2 -17.2,-17.2zM119.4024,114.5176l-4.8848,4.8848l-28.5176,-28.5176l-28.5176,28.5176l-4.8848,-4.8848l28.5176,-28.5176l-28.5176,-28.5176l4.8848,-4.8848l28.5176,28.5176l28.5176,-28.5176l4.8848,4.8848l-28.5176,28.5176z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                        </tr>
+                        <tr>
+                            <td>Technical support over IRC</td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#2ecc71">
+                                            <path
+                                                d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#2ecc71">
+                                            <path
+                                                d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#2ecc71">
+                                            <path
+                                                d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                        </tr>
+                        <tr>
+                            <td>24×7 support</td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="22"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#e67e22">
+                                            <path
+                                                d="M141.04,13.76h-110.08c-9.4944,0 -17.2,7.7056 -17.2,17.2v110.08c0,9.4944 7.7056,17.2 17.2,17.2h110.08c9.4944,0 17.2,-7.7056 17.2,-17.2v-110.08c0,-9.4944 -7.7056,-17.2 -17.2,-17.2zM119.4024,114.5176l-4.8848,4.8848l-28.5176,-28.5176l-28.5176,28.5176l-4.8848,-4.8848l28.5176,-28.5176l-28.5176,-28.5176l4.8848,-4.8848l28.5176,28.5176l28.5176,-28.5176l4.8848,4.8848l-28.5176,28.5176z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#e67e22">
+                                            <path
+                                                d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                            <td><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#e67e22">
+                                            <path
+                                                d="M81.10947,110.46413c-1.07787,1.07787 -2.53413,1.67987 -4.05347,1.67987c-1.51933,0 -2.98133,-0.602 -4.05347,-1.67987l-19.7972,-19.7972c-2.24173,-2.24173 -2.24173,-5.8652 0,-8.10693c2.24173,-2.24173 5.8652,-2.24173 8.10693,0l15.74373,15.74373l70.1416,-70.14733c-2.04107,-3.13613 -5.5728,-5.22307 -9.5976,-5.22307h-103.2c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v103.2c0,6.33533 5.13133,11.46667 11.46667,11.46667h103.2c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-95.09307z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- End Comparisons Area -->
+
+    <!-- Start Features Area -->
+    <section class="features-area ptb-70 bg-f6f4f8">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Features</h2>
+                <div class="bar"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="single-features-box">
+                        <div class="icon">
+                            <svg style="margin-bottom:20%;" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                width="30" height="30" viewBox="0 0 172 172" style=" fill:#000000;">
+                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray=""
+                                    stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none"
+                                    text-anchor="none" style="mix-blend-mode: normal">
+                                    <path d="M0,172v-172h172v172z" fill="none"></path>
+                                    <g fill="#f82c85">
+                                        <path
+                                            d="M78.83333,21.5c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v14.33333c0,7.91917 6.41417,14.33333 14.33333,14.33333v14.33333h-35.83333c-3.95788,0.0004 -7.16627,3.20879 -7.16667,7.16667v21.5c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v14.33333c0,7.91917 6.41417,14.33333 14.33333,14.33333h14.33333c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-14.33333c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333v-14.33333h34.62956c0.77394,0.12792 1.56363,0.12792 2.33757,0h34.69955v14.33333c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v14.33333c0,7.91917 6.41417,14.33333 14.33333,14.33333h14.33333c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-14.33333c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333v-21.5c-0.0004,-3.95788 -3.20879,-7.16627 -7.16667,-7.16667h-35.83333v-14.33333c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-14.33333c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <h3>Incredible infrastructure</h3>
+                        <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna
+                            aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="single-features-box">
+                        <div class="icon bg-f78acb">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+
+                        <h3>Email notifications</h3>
+                        <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna
+                            aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="single-features-box">
+                        <div class="icon bg-cdf1d8">
+                            <i class="fas fa-th"></i>
+                        </div>
+
+                        <h3>Simple dashboard</h3>
+                        <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna
+                            aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="single-features-box">
+                        <div class="icon bg-c679e3">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+
+                        <h3>Information retrieval</h3>
+                        <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna
+                            aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="single-features-box">
+                        <div class="icon bg-eb6b3d">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                                viewBox="0 0 172 172" style=" fill:#000000;">
+                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray=""
+                                    stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none"
+                                    text-anchor="none" style="mix-blend-mode: normal">
+                                    <path d="M0,172v-172h172v172z" fill="none"></path>
+                                    <g fill="#f4396f">
+                                        <path
+                                            d="M163.83841,92.15509l-41.77213,-14.55473c1.07605,-4.47176 1.67605,-9.10181 1.67605,-13.87559c0,-33.18675 -26.99775,-60.1845 -60.1845,-60.1845c-33.21905,0 -60.2491,26.99775 -60.2491,60.1845c0,33.18352 27.03005,60.18127 60.2491,60.18127c4.90945,0 9.72967,-0.65371 14.42795,-1.83272l14.44531,41.48949c1.02275,2.92411 3.87338,4.89694 6.94325,4.89694c3.31035,0 6.59155,-2.46588 7.1629,-6.13934l7.9664,-48.09236l48.09236,-7.96681c3.28912,-0.51117 5.84741,-3.21563 6.06666,-6.57783c0.29233,-3.28912 -1.6813,-6.43167 -4.82426,-7.52831zM63.55784,110.67526c-25.92533,0 -47.01833,-21.0607 -47.01833,-46.9505c0,-25.8898 21.093,-46.95373 47.01833,-46.95373c25.89303,0 46.95373,21.06393 46.95373,46.95373c0,3.26651 -0.3533,6.43732 -0.99207,9.50396l-17.06458,-5.94553c0.14657,-1.17578 0.34159,-2.33541 0.34159,-3.55924c0,-16.15286 -13.15607,-29.23585 -29.23545,-29.23585c-16.15286,0 -29.30893,13.08299 -29.30893,29.23585c0,16.15205 13.15607,29.23545 29.30893,29.23545c1.4245,0 2.78158,-0.21925 4.14431,-0.41467l5.91323,16.98422c-3.30204,0.73446 -6.6921,1.14631 -10.06076,1.14631z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <h3>Drag and drop functionality</h3>
+                        <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna
+                            aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                    <div class="single-features-box">
+                        <div class="icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+
+                        <h3>Deadline reminders</h3>
+                        <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna
+                            aliqua.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Features Area -->
+
+    <!-- Start Invoicing Area -->
+    <section class="invoicing-area ptb-70">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="invoicing-content">
+                        <h2>Easy Payment to borrow free get a better filling at home</h2>
+                        <div class="bar"></div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip.</p>
+                        <a href="#" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="invoicing-image">
+                        <div class="main-image">
+                            <img src="{% static 'img/invoicing-image/1.png' %}" class="wow animate__animated animate__zoomIn"
+                                alt="image">
+                            <img src="{% static 'img/invoicing-image/2.png' %}"
+                                class="wow animate__animated animate__fadeInLeft" alt="image">
+                            <img src="{% static 'img/invoicing-image/3.png' %}"
+                                class="wow animate__animated animate__fadeInLeft" alt="image">
+                            <img src="{% static 'img/invoicing-image/4.png' %}"
+                                class="wow animate__animated animate__fadeInRight" alt="image">
+                        </div>
+                        <div class="main-mobile-image">
+                            <img src="{% static 'img/invoicing-image/main-pic.png' %}"
+                                class="wow animate__animated animate__zoomIn" alt="image">
+                        </div>
+                        <div class="circle-image">
+                            <img src="{% static 'img/invoicing-image/circle1.png'%}" alt="image">
+                            <img src="{% static 'img/invoicing-image/circle2.png'%}" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Invoicing Area -->
+
+    <!-- Start Fun Facts Area -->
+    <section class="funfacts-area ptb-70 pt-0">
+        <div class="container">
+            <div class="section-title">
+                <h2>We always try to understand customers expectation</h2>
+                <div class="bar"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-sm-3 col-md-3 col-6">
+                    <div class="funfact">
+                        <h3><span class="odometer" data-count="180">00</span>K</h3>
+                        <p>Downloaded</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-3 col-md-3 col-6">
+                    <div class="funfact">
+                        <h3><span class="odometer" data-count="20">00</span>K</h3>
+                        <p>Feedback</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-3 col-md-3 col-6">
+                    <div class="funfact">
+                        <h3><span class="odometer" data-count="500">00</span>+</h3>
+                        <p>Workers</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-3 col-md-3 col-6">
+                    <div class="funfact">
+                        <h3><span class="odometer" data-count="70">00</span>+</h3>
+                        <p>Contrubutors</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-cta-box">
+                <h3>Have any question about us?</h3>
+                <p>Don't hesitate to contact us</p>
+                <a href="contact" class="btn btn-primary">Contact Us</a>
+            </div>
+
+            <div class="map-bg">
+                <img src="{% static 'img/map.png'%}" alt="map">
+            </div>
+        </div>
+    </section>
+    <!-- End Fun Facts Area -->
+
+    <!-- Start Feedback Area -->
+    <section class="feedback-area ptb-70 bg-f7fafd">
+        <div class="container">
+            <div class="section-title">
+                <h2>What customers say about Us</h2>
+                <div class="bar"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+            </div>
+
+            <div class="feedback-slides">
+                <div class="client-feedback">
+                    <div>
+                        <div class="item">
+                            <div class="single-feedback">
+                                <div class="client-img">
+                                    <img src="{% static 'img/client-image/dev.jpg'%}" alt="image">
+                                </div>
+
+                                <h3>Dev Oza</h3>
+                                <span>Web Developer</span>
+                                <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                    lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="single-feedback">
+                                <div class="client-img">
+                                    <img src="{% static 'img/client-image/dhruvi.jpg'%}" alt="image">
+                                </div>
+
+                                <h3>Dhruvi Sherathiya</h3>
+                                <span>Web Developer</span>
+                                <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                    lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="single-feedback">
+                                <div class="client-img">
+                                    <img src="{% static 'img/client-image/harsh.jpg'%}" alt="image">
+                                </div>
+
+                                <h3>Harsh Patel</h3>
+                                <span>Web Developer</span>
+                                <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                    lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="single-feedback">
+                                <div class="client-img">
+                                    <img src="{% static 'img/client-image/krupali.jpg'%}" alt="image">
+                                </div>
+
+                                <h3>Krupali Pipaliya</h3>
+                                <span>Web Developer</span>
+                                <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                    lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="single-feedback">
+                                <div class="client-img">
+                                    <img src="{% static 'img/client-image/neel.jpeg'%}" alt="image">
+                                </div>
+
+                                <h3>Neel Makvana</h3>
+                                <span>Web Developer</span>
+                                <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                    lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="single-feedback">
+                                <div class="client-img">
+                                    <img src="{% static 'img/client-image/dev.jpg'%}" alt="image">
+                                </div>
+
+                                <h3>Dev Oza</h3>
+                                <span>Web Developer</span>
+                                <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                    lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="single-feedback">
+                                <div class="client-img">
+                                    <img src="{% static 'img/client-image/dhruvi.jpg'%}" alt="image">
+                                </div>
+
+                                <h3>Dhruvi Sherathiya</h3>
+                                <span>Web Developer</span>
+                                <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                    lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="single-feedback">
+                                <div class="client-img">
+                                    <img src="{% static 'img/client-image/harsh.jpg'%}" alt="image">
+                                </div>
+
+                                <h3>Harsh Patel</h3>
+                                <span>Web Developer</span>
+                                <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                    lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="client-thumbnails">
+                    <div>
+                        <div class="item">
+                            <div class="img-fill"><img src="{% static 'img/client-image/dev.jpg'%}" alt="client"></div>
+                        </div>
+
+                        <div class="item">
+                            <div class="img-fill"><img src="{% static 'img/client-image/dhruvi.jpg'%}" alt="client"></div>
+                        </div>
+
+                        <div class="item">
+                            <div class="img-fill"><img src="{% static 'img/client-image/harsh.jpg'%}" alt="client"></div>
+                        </div>
+
+                        <div class="item">
+                            <div class="img-fill"><img src="{% static 'img/client-image/krupali.jpg'%}" alt="client"></div>
+                        </div>
+
+                        <div class="item">
+                            <div class="img-fill"><img src="{% static 'img/client-image/neel.jpeg'%}" alt="client"></div>
+                        </div>
+
+                        <div class="item">
+                            <div class="img-fill"><img src="{% static 'img/client-image/dev.jpg'%}" alt="client"></div>
+                        </div>
+
+                        <div class="item">
+                            <div class="img-fill"><img src="{% static 'img/client-image/dhruvi.jpg'%}" alt="client"></div>
+                        </div>
+
+                        <div class="item">
+                            <div class="img-fill"><img src="{% static 'img/client-image/harsh.jpg'%}" alt="client"></div>
+                        </div>
+                    </div>
+
+                    <button class="prev-arrow slick-arrow">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+
+                    <button class="next-arrow slick-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Feedback Area -->
+
+    <!-- Start Ready To Talk Area -->
+    <section class="ready-to-talk">
+        <div class="container">
+            <div class="ready-to-talk-content">
+                <h3>Ready to talk?</h3>
+                <p>Our team is here to answer your question about Luvion</p>
+                <a href="contact" class="btn btn-primary">Contact Us</a>
+                <span><a href="#">Or, get started now with a free trial</a></span>
+            </div>
+        </div>
+    </section>
+    <!-- End Ready To Talk Area -->
+
+    <!-- Start Partner Area -->
+    <div class="partner-area">
+        <div class="container">
+
+            <h3>More that 1.5 million businesses and organizations use Luvion</h3>
+
+            <div class="partner-inner">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-1.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover1.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-2.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover2.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-3.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover3.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-4.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover4.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-5.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover5.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-6.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover6.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-7.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover7.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-8.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover8.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-9.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover9.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-10.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover10.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-11.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover11.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-12.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover12.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-13.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover13.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-14.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover14.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-15.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover15.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-16.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover16.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-17.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover17.png'%}" alt="partner">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                        <a href="#">
+                            <img src="{% static 'img/partner-image/partner-18.png'%}" alt="partner">
+                            <img src="{% static 'img/partner-image/partner-hover18.png'%}" alt="partner">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Partner Area -->
+
+
+
+    <!-- Start Account Create Area -->
+    <section class="account-create-area">
+        <div class="container">
+            <div class="account-create-content">
+                <h2>Apply for an account in minutes</h2>
+                <p>Get your Luvion account today!</p>
+                <a href="createAccount" class="btn btn-primary">Get Your Luvion Account</a>
+            </div>
+        </div>
+    </section>
+    <!-- End Account Create Area -->
+
+    <!-- Start Footer Area -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-md-6">
+                    <div class="single-footer-widget">
+                        <div class="logo">
+                            <a href="index.html" class="black-logo"><img src="{% static 'img/black-logo.png'%}" alt="logo"></a>
+                            <a href="index.html" class="white-logo"><img src="{% static 'img/logo.png'%}" alt="logo"></a>
+                            <p>Quis ipsum suspendisse ultrices gravida commodo. Risus commodo veliliee vel viverra
+                                maecenas accumsan lacus vel facilisis.</p>
+                        </div>
+
+                        <ul class="social-links">
+                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-md-6">
+                    <div class="single-footer-widget">
+                        <h3>Company</h3>
+
+                        <ul class="list">
+                            <li><a href="about">About Us</a></li>
+                            <li><a href="features-2.html">Services</a></li>
+                            <li><a href="features-1.html">Features</a></li>
+                            <li><a href="pricing.html">Our Pricing</a></li>
+                            <li><a href="blog-1.html">Latest News</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-md-6">
+                    <div class="single-footer-widget">
+                        <h3>Support</h3>
+
+                        <ul class="list">
+                            <li><a href="faq.html">FAQ's</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Condition</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-md-6">
+                    <div class="single-footer-widget">
+                        <h3>Address</h3>
+
+                        <ul class="footer-contact-info">
+                            <li><span>Location:</span> 27 Division St, New York, NY 10002, USA</li>
+                            <li><span>Email:</span> <a
+                                    href="/cdn-cgi/l/email-protection#abc3cec7c7c4ebc7deddc2c4c585c8c4c6"><span
+                                        class="__cf_email__"
+                                        data-cfemail="bdd5d8d1d1d2fdd1c8cbd4d2d393ded2d0">[email&#160;protected]</span></a>
+                            </li>
+                            <li><span>Phone:</span> <a href="tel:+321984754">+ (321) 984 754</a></li>
+                            <li><span>Fax:</span> <a href="tel:+12129876543">+1-212-9876543</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright-area">
+                <p>Copyright @
+                    <script data-cfasync="false"
+                        src="{% static '/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js'%}"></script>
+                    <script>document.write(new Date().getFullYear())</script> Luvion is proudly created by <a
+                        href="https://envytheme.com/" target="_blank"> EnvyTheme</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="map-image"><img src="{% static 'img/map.png'%}" alt="map"></div>
+    </footer>
+    <!-- End Footer Area -->
+
+    <div class="go-top"><i class="fas fa-arrow-up"></i></div>
+
+    <!-- Dark/Light Toggle -->
+    <div class="dark-version">
+        <label id="switch" class="switch">
+            <input type="checkbox" onchange="toggleTheme()" id="slider">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <!-- Links of JS files -->
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'js/meanmenu.js'%}"></script>
+    <script src="{% static 'js/nice-select.min.js'%}"></script>
+    <script src="{% static 'js/slick.min.js'%}"></script>
+    <script src="{% static 'js/magnific-popup.min.js'%}"></script>
+    <script src="{% static 'js/appear.min.js'%}"></script>
+    <script src="{% static 'js/odometer.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/parallax.min.js'%}"></script>
+    <script src="{% static 'js/wow.min.js'%}"></script>
+    <script src="{% static 'js/form-validator.min.js'%}"></script>
+    <script src="{% static 'js/contact-form-script.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+    </body>
+
+</html>
